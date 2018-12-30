@@ -1,9 +1,9 @@
-.card {
+mat-card {
   background-color: lightyellow;
   width: 15rem;
   margin: 1rem;
 
-  .card-body {
-    height: 10rem;
+  mat-card-title {
+    border-bottom: solid 0.0325rem grey;
   }
 }
