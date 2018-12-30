@@ -8,6 +8,8 @@ import {Note} from '../shared/entities/note';
 })
 export class NoteComponent implements OnInit {
 
+  summaryLength = 130;
+
   note: Note;
 
   constructor() {
@@ -17,7 +19,9 @@ export class NoteComponent implements OnInit {
   ngOnInit() {
     this.note =  {
       title: 'Hello World',
-      context: 'Say hello to the entire world!\nSay hello to the entire world!\nSay hello to the entire world!'
+      context: 'Say hello to the entire world! Say hello to the entire world! Say hello to the entire world! ' +
+        'Say hello to the entire world! Say hello to the entire world! Say hello to the entire world! ' +
+        'Say hello to the entire world! Say hello to the entire world!'
     };
   }
 
