@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {Note} from '../shared/entities/note';
+import {NoteService} from '../shared/services/note.service';
+import {INoteService} from '../shared/services/INoteService';
 
 @Component({
   selector: 'todo-note',
@@ -10,6 +12,7 @@ export class NoteComponent implements OnInit {
 
   summaryLength = 130;
 
+  @Input()
   note: Note;
 
   constructor() {
@@ -17,12 +20,7 @@ export class NoteComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.note =  {
-      title: 'Hello World',
-      context: 'Say hello to the entire world! Say hello to the entire world! Say hello to the entire world! ' +
-        'Say hello to the entire world! Say hello to the entire world! Say hello to the entire world! ' +
-        'Say hello to the entire world! Say hello to the entire world!'
-    };
+
   }
 
 }

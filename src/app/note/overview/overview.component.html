@@ -1,5 +1,9 @@
 <div class="card">
   <div class="card-body">
-    <todo-note></todo-note>
+    <ul class="list-unstyled">
+      <li *ngFor="let note of notes">
+        <todo-note [note]="note"></todo-note>
+      </li>
+    </ul>
   </div>
 </div>

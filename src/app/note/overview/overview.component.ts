@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {INoteService} from '../shared/services/INoteService';
+import {Note} from '../shared/entities/note';
 
 @Component({
   selector: 'todo-overview',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  notes: Note[];
+
+  constructor(@Inject('INoteService') private noteService: INoteService) { }
 
   ngOnInit() {
+    this.notes = this.noteService.getNotes();
   }
 
 }
