@@ -1,9 +1,18 @@
-<mat-card>
+<mat-card fxLayout="row">
   <mat-card-content>
+    <div id="portal">
+
+    </div>
     <ul>
       <li *ngFor="let note of notes">
         <todo-note [note]="note"></todo-note>
       </li>
     </ul>
+    <button mat-fab class="float-right" (click)="click()">New +</button>
   </mat-card-content>
 </mat-card>
+
+
+<ng-template id="tmpPortal" cdkPortal #tmpPortal="cdkPortal">
+  <todo-note [note]="notes[0]" cdkDrag></todo-note>
+</ng-template>

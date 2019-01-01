@@ -5,6 +5,10 @@ import {OverviewComponent} from './overview/overview.component';
 import { SummaryPipe } from './shared/pipes/summary.pipe';
 import {MockNoteService} from './shared/services/mock-note.service';
 import {MatButtonModule, MatCardModule} from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {PortalModule} from '@angular/cdk/portal';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,11 @@ import {MatButtonModule, MatCardModule} from '@angular/material';
   imports: [
     CommonModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule,
+    PortalModule,
+    OverlayModule,
+    DragDropModule
   ],
   providers: [
     { provide: 'INoteService', useClass: MockNoteService }
