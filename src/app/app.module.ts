@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {NoteModule} from './note/note.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CoreModule} from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NoteModule

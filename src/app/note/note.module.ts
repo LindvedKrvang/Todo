@@ -9,6 +9,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {PortalModule} from '@angular/cdk/portal';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {CoreModule} from '../core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
   ],
   imports: [
     CommonModule,
+    CoreModule,
     MatButtonModule,
     MatCardModule,
     FlexLayoutModule,
