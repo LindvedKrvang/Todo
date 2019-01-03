@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
@@ -17,4 +17,14 @@ export class NoteFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit() {
+    console.log('Submitted');
+  }
+
+  onCancelClick(titleInput: HTMLInputElement, contentInput: HTMLTextAreaElement) {
+    titleInput.value = '';
+    contentInput.value = '';
+    this.form.get('content').setErrors({'required': true});
+    this.form.get('content').markAsUntouched();
+  }
 }
