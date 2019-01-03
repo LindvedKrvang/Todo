@@ -1,0 +1,14 @@
+mat-card {
+  width: 20rem;
+  height: 25rem;
+
+  .mat-form-field {
+    width: 100%;
+
+    textarea {
+      overflow: hidden;
+    }
+  }
+}
+
+
