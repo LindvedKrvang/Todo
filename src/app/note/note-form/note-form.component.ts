@@ -24,7 +24,8 @@ export class NoteFormComponent implements OnInit {
   onCancelClick(titleInput: HTMLInputElement, contentInput: HTMLTextAreaElement) {
     titleInput.value = '';
     contentInput.value = '';
-    this.form.get('content').setErrors({'required': true});
-    this.form.get('content').markAsUntouched();
+    const contentControl = this.form.get('content');
+    contentControl.setErrors({'required': true});
+    contentControl.markAsUntouched();
   }
 }
