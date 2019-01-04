@@ -1,8 +1,5 @@
-<mat-card fxLayout="row">
+<mat-card fxLayout="column">
   <mat-card-content>
-    <div id="portal">
-
-    </div>
     <ul>
       <li *ngFor="let note of notes">
         <todo-note [note]="note"></todo-note>
@@ -11,7 +8,6 @@
     <button mat-fab class="float-right" cdk-overlay-origin #createButton="cdkOverlayOrigin" (click)="click()">New +</button>
   </mat-card-content>
 </mat-card>
-
 
 <todo-overlay-container [shouldCreateListener]="emitter" [positionOrigin]="createButton">
   <todo-note-form></todo-note-form>

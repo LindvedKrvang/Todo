@@ -5,10 +5,12 @@ import {MatCardModule} from '@angular/material';
 import {PortalModule} from '@angular/cdk/portal';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {OverlayService} from './shared/overlay.service';
+import { GenerateTitlePipe } from './shared/pipes/generate-title.pipe';
 
 @NgModule({
   declarations: [
-    OverlayContainerComponent
+    OverlayContainerComponent,
+    GenerateTitlePipe
   ],
   imports: [
     CommonModule,

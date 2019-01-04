@@ -10,7 +10,7 @@ import {INoteService} from '../shared/services/INoteService';
 })
 export class NoteComponent implements OnInit {
 
-  summaryLength = 130;
+  contentSummaryLength = 130;
 
   @Input()
   note: Note;

@@ -18,7 +18,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     OverviewComponent,
     NoteComponent,
     SummaryPipe,
-    NoteFormComponent
+    NoteFormComponent,
   ],
   imports: [
     CommonModule,

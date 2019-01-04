@@ -23,4 +23,8 @@ export class MockNoteService implements INoteService{
   getNotes(): Note[] {
     return this.notes;
   }
+
+  addNote(note: Note): void {
+    this.notes.push(note);
+  }
 }

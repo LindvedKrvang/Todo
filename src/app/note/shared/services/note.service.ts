@@ -5,12 +5,15 @@ import {Note} from '../entities/note';
 @Injectable({
   providedIn: 'root'
 })
-export class NoteService implements INoteService{
+export class NoteService implements INoteService {
 
   constructor() { }
 
   getNotes(): Note[] {
     return null;
+  }
+
+  addNote(note: Note): void {
   }
 
 }

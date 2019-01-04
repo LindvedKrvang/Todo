@@ -1,4 +1,4 @@
 <mat-card>
-  <mat-card-title>{{ note.title }}</mat-card-title>
-  <mat-card-content>{{ note.context | summary:summaryLength }}</mat-card-content>
+  <mat-card-title>{{ note.title | summary }}</mat-card-title>
+  <mat-card-content>{{ note.context | summary:contentSummaryLength }}</mat-card-content>
 </mat-card>
