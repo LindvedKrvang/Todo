@@ -4,6 +4,7 @@ import {OverlayContainerComponent} from './overlay-container/overlay-container.c
 import {MatCardModule} from '@angular/material';
 import {PortalModule} from '@angular/cdk/portal';
 import {OverlayModule} from '@angular/cdk/overlay';
+import {OverlayService} from './shared/overlay.service';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {OverlayModule} from '@angular/cdk/overlay';
   ],
   exports: [
     OverlayContainerComponent
-  ]
+  ],
+  providers: [OverlayService]
 })
 export class CoreModule { }

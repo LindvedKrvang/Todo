@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {OverlayService} from '../../core/shared/overlay.service';
 
 @Component({
   selector: 'todo-note-form',
@@ -12,7 +13,7 @@ export class NoteFormComponent implements OnInit {
     title: new FormControl(''),
     content: new FormControl('', [Validators.required])
   });
-  constructor() { }
+  constructor(private overlayService: OverlayService) { }
 
   ngOnInit() {
   }
@@ -27,5 +28,7 @@ export class NoteFormComponent implements OnInit {
     const contentControl = this.form.get('content');
     contentControl.setErrors({'required': true});
     contentControl.markAsUntouched();
+
+    this.overlayService.emitCloseOverlayEmitter();
   }
 }

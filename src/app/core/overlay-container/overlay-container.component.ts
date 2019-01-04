@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {listener} from '@angular/core/src/render3';
 import {CdkPortal} from '@angular/cdk/portal';
-import {CdkOverlayOrigin, Overlay, OverlayConfig} from '@angular/cdk/overlay';
+import {CdkOverlayOrigin, Overlay, OverlayConfig, OverlayRef} from '@angular/cdk/overlay';
+import {OverlayService} from '../shared/overlay.service';
 
 @Component({
   selector: 'todo-overlay-container',
@@ -16,11 +17,16 @@ export class OverlayContainerComponent implements OnInit {
 
   @ViewChild(CdkPortal) portal;
 
-  constructor(private overlay: Overlay) { }
+  private overlayRef: OverlayRef;
+
+  constructor(private overlay: Overlay, private overlayService: OverlayService) { }
 
   ngOnInit() {
     this.shouldCreateListener.subscribe(() => {
       this.createOverlay();
+    });
+    this.overlayService.getCloseOverlayEmitter.subscribe(() => {
+      if (this.overlayRef) this.overlayRef.dispose();
     });
   }
 
@@ -35,8 +41,8 @@ export class OverlayContainerComponent implements OnInit {
       hasBackdrop: true
     });
 
-    const overlayRef = this.overlay.create(config);
-    overlayRef.attach(this.portal);
-    overlayRef.backdropClick().subscribe(() => overlayRef.detach());
+    this.overlayRef = this.overlay.create(config);
+    this.overlayRef.attach(this.portal);
+    this.overlayRef.backdropClick().subscribe(() => this.overlayRef.dispose());
   }
 }
