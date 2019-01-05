@@ -33,7 +33,7 @@ export class OverviewComponent implements OnInit {
   }
 
 
-  click() {
+  newNoteClick() {
     this.emitter.emit();
   }
 }

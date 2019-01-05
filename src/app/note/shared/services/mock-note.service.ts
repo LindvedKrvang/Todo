@@ -9,9 +9,12 @@ export class MockNoteService implements INoteService{
 
   notes: Note[] = [];
 
+  private idCounter = 0;
+
   constructor() {
     for (let i = 0; i < 10; i++) {
       this.notes.push({
+        id: ++this.idCounter,
         title: `Hello World ${i}`,
         context: 'Say hello to the entire world! Say hello to the entire world! Say hello to the entire world! ' +
           'Say hello to the entire world! Say hello to the entire world! Say hello to the entire world! ' +
@@ -25,6 +28,12 @@ export class MockNoteService implements INoteService{
   }
 
   addNote(note: Note): void {
+    note.id = ++this.idCounter;
     this.notes.push(note);
+  }
+
+  deleteNote(id: number): void {
+    const indexOfNote = this.notes.findIndex(note => note.id === id);
+    this.notes.splice(indexOfNote, 1);
   }
 }

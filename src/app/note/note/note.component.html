@@ -1,4 +1,4 @@
 <mat-card>
-  <mat-card-title >{{ note.title | summary }} <i class="fas fa-times float-right"></i></mat-card-title>
+  <mat-card-title >{{ note.title | summary }} <i class="fas fa-times float-right" (click)="deleteNoteClick()"></i></mat-card-title>
   <mat-card-content>{{ note.context | summary:contentSummaryLength }}</mat-card-content>
 </mat-card>

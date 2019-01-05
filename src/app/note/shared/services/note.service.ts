@@ -16,4 +16,7 @@ export class NoteService implements INoteService {
   addNote(note: Note): void {
   }
 
+  deleteNote(id: number): void {
+  }
+
 }

@@ -15,12 +15,16 @@ export class NoteComponent implements OnInit {
   @Input()
   note: Note;
 
-  constructor() {
+  constructor(@Inject('INoteService') private noteService: INoteService) {
 
   }
 
   ngOnInit() {
 
+  }
+
+  deleteNoteClick() {
+    this.noteService.deleteNote(this.note.id);
   }
 
 }
